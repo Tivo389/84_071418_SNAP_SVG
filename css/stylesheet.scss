@@ -41,9 +41,9 @@ section {
   justify-content: center;
   width: 100vw;
   @include tablet {
-    flex-direction: initial;
+    // flex-direction: initial;
   }
   @include desktop {
-    flex-direction: initial;
+    // flex-direction: initial;
   }
 }

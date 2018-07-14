@@ -409,15 +409,3 @@ section {
   -ms-flex-pack: center;
   justify-content: center;
   width: 100vw; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .mainWrapper {
-      -webkit-box-orient: initial;
-      -webkit-box-direction: initial;
-      -ms-flex-direction: initial;
-      flex-direction: initial; } }
-  @media (min-width: 1024px) {
-    .mainWrapper {
-      -webkit-box-orient: initial;
-      -webkit-box-direction: initial;
-      -ms-flex-direction: initial;
-      flex-direction: initial; } }
