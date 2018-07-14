@@ -8,8 +8,27 @@
 
 
 
-// ELEMENT LEVEL ----------------------------------------------------------------------------------
+// ID LEVEL ------------------------------------------------------------------------------------
 
+
+// ELEMENT LEVEL ----------------------------------------------------------------------------------
+code {
+  color: $colorGray;
+  font-size: 1.2rem;
+  text-align: center;
+  display: block;
+  margin-bottom: 1em;
+}
+
+section {
+  text-align: center;
+  border-top: 1px solid $colorLightGray;
+  width: 100%;
+  padding: 3rem 0;
+  &:last-child {
+    border-bottom: 1px solid $colorLightGray;
+  }
+}
 
 
 
