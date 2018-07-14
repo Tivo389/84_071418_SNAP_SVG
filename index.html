@@ -13,18 +13,46 @@
 
 
 <div class="mainWrapper">
+  <h3>snap.svg Experiments</h3>
+
   <section>
-    <code>cups.svg</code>
-    <object id="objectCups" data="images/cups.svg" type="image/svg+xml"></object>
+    <div>
+      <object id="objectCups" data="images/cups.svg" type="image/svg+xml"></object>
+    </div>
+    <div>
+      <h5>cups.svg</h5>
+      <p>-&ensp;Implemented using <code>&lt;object&gt;</code> so I made some adjustments in <code>main.js</code> to make it wait until the svg content loaded.</p>
+      <p>-&ensp;The svg consists of 2 <code>&lt;path&gt;</code> elements with the coordinated defined by the <code>d</code> attribute.</p>
+      <p>-&ensp;<a href="https://codeburst.io/svg-morphing-the-easy-way-and-the-hard-way-c117a620b65f">Reference</a></p>
+    </div>
   </section>
+
   <section>
-    <code>00a_shapesPathed.svg</code>
-    <object id="objectShapesA" data="images/00a_shapesPathed.svg" type="image/svg+xml"></object>
+    <div>
+      <object id="objectShapesCharlie" data="images/01c_shapesPathed.svg" type="image/svg+xml"></object>
+    </div>
+    <div>
+      <h5>01c_shapesPathed.svg</h5>
+      <p>-&ensp;<code>01a_shapes.svg</code> consisted of a <code>&lt;circle&gt;</code>, <code>&lt;polygon&gt;</code>, <code>&lt;rect&gt;</code>. </p>
+      <p>-&ensp;Neither <code>&lt;circle&gt;</code> and <code>&lt;rect&gt;</code> use <code>d</code> or <code>points</code> attributes so I added anchor-points manually to convert them.</p>
+      <p>-&ensp;The output was <code>01b_shapesAddedAnchor.svg</code> but the attributes to define the coordinates were not consistent. <code>&lt;path&gt;</code> uses <code>d</code>, <code>&lt;polygon&gt;</code> uses <code>points</code>.</p>
+      <p>-&ensp;Not certain if it's best practice but manually converted them all to <code>&lt;path&gt;</code> elements and adjusted the <code>d</code> attribute.</p>
+    </div>
   </section>
+
   <section>
-    <code>00c_shapesPathed.svg</code>
-    <object id="objectShapesC" data="images/00c_shapesPathed.svg" type="image/svg+xml"></object>
+    <div>
+      <object id="objectShapesEA" data="images/02_shapesEqualAnchors.svg" type="image/svg+xml"></object>
+    </div>
+    <div>
+      <h5>02_shapesEqualAnchors.svg</h5>
+      <p>-&ensp;Tried adding the same number of anchor points to each shape in the hopes the transition would be more smooth.</p>
+      <p>-&ensp;Excluding the pentagon-to-cross transition, it's either worse or about the same.</p>
+      <p>-&ensp;Automated shape-shifting animation would probably need a more manual approach if the transition needs to be more elegant.</p>
+    </div>
   </section>
+
+  <!-- CONTINUE HERE. Add another section, take alook at the samples from the download and test your own. -->
 </div>
 
 

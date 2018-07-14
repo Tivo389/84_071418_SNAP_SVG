@@ -11,23 +11,71 @@
 // ID LEVEL ------------------------------------------------------------------------------------
 
 
+
 // ELEMENT LEVEL ----------------------------------------------------------------------------------
 code {
+  background-color: #dfe0e0;
+  border-radius: 0.25rem;
+  color: $colorDarkGray;
+  font-family: Monaco, Menlo, "Ubuntu Mono", "Droid Sans Mono", Consolas, monospace;
+  margin: 0 0.05rem;
+  padding: 0 0.35rem;
+  vertical-align: baseline;
+  white-space: normal;
+  font-size: 85%;
+}
+
+h3 {
+  padding: 1.5rem 3rem;
   color: $colorGray;
-  font-size: 1.2rem;
-  text-align: center;
-  display: block;
+  text-align: initial;
+  width: 100%;
+}
+
+h5 {
+  color: $colorGray;
+  font-size: 1.6rem;
   margin-bottom: 1em;
 }
 
+p {
+  color: $colorDarkGray;
+  text-indent: -0.65em;
+  margin-left: 0.65em;
+}
+
 section {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   border-top: 1px solid $colorLightGray;
   width: 100%;
-  padding: 3rem 0;
+  padding: 3rem;
   &:last-child {
     border-bottom: 1px solid $colorLightGray;
   }
+  > div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 140px;
+  }
+  > div:last-child {
+    display: none;
+    margin-left: 2em;
+    flex: 1 0;
+    @include tablet {
+      display: initial;
+    }
+    @include desktop {
+      display: initial;
+    }
+  }
+}
+
+ul {
+  padding: 0 0 0 20px;
 }
 
 
@@ -37,7 +85,6 @@ section {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
   width: 100vw;
   @include tablet {
