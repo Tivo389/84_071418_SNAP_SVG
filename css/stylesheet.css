@@ -325,7 +325,7 @@ p, a {
   margin: 0; }
 
 p + p {
-  margin: 0.75em 0 0 0; }
+  margin-top: 0.75em; }
 
 h1 {
   font-size: calc(1.6rem * 4.48); }
@@ -379,19 +379,74 @@ a {
   display: none !important; }
 
 code {
+  background-color: #dfe0e0;
+  border-radius: 0.25rem;
+  color: #333333;
+  font-family: Monaco, Menlo, "Ubuntu Mono", "Droid Sans Mono", Consolas, monospace;
+  margin: 0 0.05rem;
+  padding: 0 0.35rem;
+  vertical-align: baseline;
+  white-space: normal;
+  font-size: 85%; }
+
+h3 {
+  padding: 1.5rem 3rem;
   color: #777777;
-  font-size: 1.2rem;
-  text-align: center;
-  display: block;
+  text-align: initial;
+  width: 100%; }
+
+h5 {
+  color: #777777;
+  font-size: 1.6rem;
   margin-bottom: 1em; }
 
+p {
+  color: #333333;
+  text-indent: -0.65em;
+  margin-left: 0.65em; }
+
 section {
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   border-top: 1px solid #cccccc;
   width: 100%;
-  padding: 3rem 0; }
+  padding: 3rem; }
   section:last-child {
     border-bottom: 1px solid #cccccc; }
+  section > div:first-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 140px;
+    height: 140px; }
+  section > div:last-child {
+    display: none;
+    margin-left: 2em;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0;
+    flex: 1 0; }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      section > div:last-child {
+        display: initial; } }
+    @media (min-width: 1024px) {
+      section > div:last-child {
+        display: initial; } }
+
+ul {
+  padding: 0 0 0 20px; }
 
 .mainWrapper {
   -webkit-box-align: center;
@@ -404,7 +459,6 @@ section {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100vh;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;

@@ -21,7 +21,40 @@ document.addEventListener('DOMContentLoaded', () => {
    }, false);
   //-----------------------------------------------------------------------------------------------
   // CODE FOR SECTION '00c_shapesPathed.svg'
-  const objectShapes = document.querySelector("#objectShapesC");
+  const objectShapesCharlie = document.querySelector("#objectShapesCharlie");
+  objectShapesCharlie.addEventListener("load", function() {
+    const svg = objectShapesCharlie.contentDocument.querySelector("#shapes");
+    const snap = Snap(svg);
+    const circle = snap.select('#circle');
+    const circlePoints = circle.node.getAttribute('d');
+    const triangle = snap.select('#triangle');
+    const trianglePoints = triangle.node.getAttribute('d');
+    const square = snap.select('#square');
+    const squarePoints = square.node.getAttribute('d');
+    const pentagon = snap.select('#pentagon');
+    const pentagonPoints = pentagon.node.getAttribute('d');
+    const cross = snap.select('#cross');
+    const crossPoints = cross.node.getAttribute('d');
+    const circleToTriangle = function() {
+      circle.animate({ d: trianglePoints }, 1000, mina.bounce, triangleToSquare);
+    }
+    const triangleToSquare = function() {
+      circle.animate({ d: squarePoints }, 1000, mina.bounce, squareToPentagon);
+    }
+    const squareToPentagon = function() {
+      circle.animate({ d: pentagonPoints }, 1000, mina.bounce, pentagonToCross);
+    }
+    const pentagonToCross = function() {
+      circle.animate({ d: crossPoints }, 1000, mina.bounce, crossToCircle);
+    }
+    const crossToCircle = function() {
+      circle.animate({ d: circlePoints }, 1000, mina.bounce, circleToTriangle);
+    }
+    circleToTriangle();
+   }, false);
+  //-----------------------------------------------------------------------------------------------
+  // CODE FOR SECTION '01_shapesPathed.svg'
+  const objectShapes = document.querySelector("#objectShapesEA");
   objectShapes.addEventListener("load", function() {
     const svg = objectShapes.contentDocument.querySelector("#shapes");
     const snap = Snap(svg);
@@ -36,19 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const cross = snap.select('#cross');
     const crossPoints = cross.node.getAttribute('d');
     const circleToTriangle = function() {
-      circle.animate({ d: trianglePoints }, 1000, mina.linear, triangleToSquare);
+      circle.animate({ d: trianglePoints }, 1000, mina.bounce, triangleToSquare);
     }
     const triangleToSquare = function() {
-      circle.animate({ d: squarePoints }, 1000, mina.linear, squareToPentagon);
+      circle.animate({ d: squarePoints }, 1000, mina.bounce, squareToPentagon);
     }
     const squareToPentagon = function() {
-      circle.animate({ d: pentagonPoints }, 1000, mina.linear, pentagonToCross);
+      circle.animate({ d: pentagonPoints }, 1000, mina.bounce, pentagonToCross);
     }
     const pentagonToCross = function() {
-      circle.animate({ d: crossPoints }, 1000, mina.linear, crossToCircle);
+      circle.animate({ d: crossPoints }, 1000, mina.bounce, crossToCircle);
     }
     const crossToCircle = function() {
-      circle.animate({ d: circlePoints }, 1000, mina.linear, circleToTriangle);
+      circle.animate({ d: circlePoints }, 1000, mina.bounce, circleToTriangle);
     }
     circleToTriangle();
    }, false);
