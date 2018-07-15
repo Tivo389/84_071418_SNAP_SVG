@@ -60,6 +60,9 @@ section {
     align-items: center;
     width: 140px;
     height: 140px;
+    object {
+      width: 90%;
+    }
   }
   > div:last-child {
     display: none;
@@ -93,4 +96,45 @@ ul {
   @include desktop {
     // flex-direction: initial;
   }
+}
+
+
+
+// GHOST  -----------------------------------------------------------------------------------------
+@keyframes ghostFloat {
+  0% { transform: translate(0%, 0%); }
+  33% { transform: translate(0%, 15%); }
+  66% { transform: translate(0%, -15%); }
+  100% { transform: translate(0%, 0%); }
+}
+
+@keyframes ghostSprite {
+  100% { transform: translateX(-100%); }
+}
+
+object[data="images/ghost_frontSprite.svg"] {
+  animation: 0.35s infinite ghostSprite steps(2);
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 200%;
+}
+
+object[data="images/ghost_Path.svg"] {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ghostCanvas {
+  position: relative;
+}
+
+.ghostFloat {
+  width: 25%;
+  height: 25%;
+  overflow: hidden;
+  animation: 1.5s ease-in-out infinite ghostFloat;
 }
