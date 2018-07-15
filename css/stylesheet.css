@@ -432,6 +432,8 @@ section {
     align-items: center;
     width: 140px;
     height: 140px; }
+    section > div:first-child object {
+      width: 90%; }
   section > div:last-child {
     display: none;
     margin-left: 2em;
@@ -463,3 +465,66 @@ ul {
   -ms-flex-pack: center;
   justify-content: center;
   width: 100vw; }
+
+@-webkit-keyframes ghostFloat {
+  0% {
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%); }
+  33% {
+    -webkit-transform: translate(0%, 15%);
+    transform: translate(0%, 15%); }
+  66% {
+    -webkit-transform: translate(0%, -15%);
+    transform: translate(0%, -15%); }
+  100% {
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%); } }
+
+@keyframes ghostFloat {
+  0% {
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%); }
+  33% {
+    -webkit-transform: translate(0%, 15%);
+    transform: translate(0%, 15%); }
+  66% {
+    -webkit-transform: translate(0%, -15%);
+    transform: translate(0%, -15%); }
+  100% {
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%); } }
+
+@-webkit-keyframes ghostSprite {
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); } }
+
+@keyframes ghostSprite {
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); } }
+
+object[data="images/ghost_frontSprite.svg"] {
+  -webkit-animation: 0.35s infinite ghostSprite steps(2);
+  animation: 0.35s infinite ghostSprite steps(2);
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 200%; }
+
+object[data="images/ghost_Path.svg"] {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%; }
+
+.ghostCanvas {
+  position: relative; }
+
+.ghostFloat {
+  width: 25%;
+  height: 25%;
+  overflow: hidden;
+  -webkit-animation: 1.5s ease-in-out infinite ghostFloat;
+  animation: 1.5s ease-in-out infinite ghostFloat; }

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toSimple();
    }, false);
   //-----------------------------------------------------------------------------------------------
-  // CODE FOR SECTION '00c_shapesPathed.svg'
+  // CODE FOR SECTION '01c_shapesPathed.svg'
   const objectShapesCharlie = document.querySelector("#objectShapesCharlie");
   objectShapesCharlie.addEventListener("load", function() {
     const svg = objectShapesCharlie.contentDocument.querySelector("#shapes");
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     circleToTriangle();
    }, false);
   //-----------------------------------------------------------------------------------------------
-  // CODE FOR SECTION '01_shapesPathed.svg'
+  // CODE FOR SECTION '02_shapesEqualAnchors.svg'
   const objectShapes = document.querySelector("#objectShapesEA");
   objectShapes.addEventListener("load", function() {
     const svg = objectShapes.contentDocument.querySelector("#shapes");
@@ -85,5 +85,96 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     circleToTriangle();
    }, false);
+  //-----------------------------------------------------------------------------------------------
+  // CODE FOR SECTION '03_animateAlongPath.svg'
+  const objectAAP = document.querySelector("#objectAAP");
+  objectAAP.addEventListener("load", function() {
+    const svg = objectAAP.contentDocument.querySelector("#svgAAP");
+    const snap = Snap(svg);
+    const circle = snap.select('#circle');
+    const path = snap.select('#path');
+    const pathCoord = path.node.getAttribute('d');
+
+    // - 'path' = The path; not the 'd' attribute, we wish with to animate along.
+    // - 'element' =  The element we want to animate.
+    // - 'start' = The frame we wish to start the animation on.
+    // - 'duration' = Duration in milliseconds.
+    const animateAlongPath = function(path, element, start, duration) {
+      const length = Snap.path.getTotalLength(path);
+      Snap.animate(start, length, function(value) {
+        const nextPoint = Snap.path.getPointAtLength(path, value);
+        element.attr({ cx: nextPoint.x, cy: nextPoint.y });
+      }, duration, mina.easeinout, function() {
+        console.log('Restarting Animation...');
+        animateAlongPath(path, circle, 0, 3000);
+      });
+    };
+
+    animateAlongPath(path, circle, 0, 3000);
+   }, false);
+  //-----------------------------------------------------------------------------------------------
+  // CODE FOR SECTION '03_animateAlongPath.svg + Click Handler'
+  const objectAAPClick = document.querySelector("#objectAAPClick");
+  objectAAPClick.addEventListener("load", function() {
+    objectAAPClick.contentDocument.addEventListener("click", function() {
+      animateAlongPath(path, circle, 0, 3000);
+    });
+
+    const svg = objectAAPClick.contentDocument.querySelector("#svgAAPC");
+    const snap = Snap(svg);
+    const circle = snap.select('#circle');
+    const path = snap.select('#path');
+    const pathCoord = path.node.getAttribute('d');
+
+    const animateAlongPath = function(path, element, start, duration) {
+      const length = Snap.path.getTotalLength(path);
+      Snap.animate(start, length, function(value) {
+        const nextPoint = Snap.path.getPointAtLength(path, value);
+        element.attr({ cx: nextPoint.x, cy: nextPoint.y });
+      }, duration, mina.easeinout, function() {
+        console.log('Restarting Animation...');
+        animateAlongPath(path, circle, 0, 3000);
+      });
+    };
+   }, false);
+  //-----------------------------------------------------------------------------------------------
+  // CODE FOR SECTION 'Xxxxxxxxx.svg'
+  // let ghostPath;
+
+  // const objectGhost = document.querySelector("#objectGhost");
+  // objectGhost.addEventListener("load", function() {
+  //   const svg = objectGhost.contentDocument.querySelector("#svgGhost");
+  //   const snap = Snap(svg);
+  //   const ghost = snap.select('#ghost');
+  //   const ghostTransform = ghost.node.getAttribute('transform');
+  //  }, false);
+
+  // const objectGhostPath = document.querySelector("#objectGhostPath");
+  // objectGhostPath.addEventListener("load", function() {
+  //   const svg = objectGhostPath.contentDocument.querySelector("#svgGhostPath");
+  //   const snap = Snap(svg);
+  //   const ghostP = snap.select('#ghostPath');
+  //   ghostPath = ghostP.node.getAttribute('transform');
+  //  }, false);
+
+  // animateAlongPath = function (path, element, start, dur, callback) {
+  //   // Get the path length, so we know how many frames we will animate over
+  //   var len = Snap.path.getTotalLength(path);
+  //   Snap.animate(start, len, function (value) {
+  //     // movePoint gets the path attributes at a certain frame
+  //     var movePoint = Snap.path.getPointAtLength(path, value);
+  //     // applies the attributes to our element
+  //     element.attr({ cx: movePoint.x, cy: movePoint.y });
+  //   }, dur, mina.easeinout, function () {
+  //     callback(path);
+  //   });
+  // };
+
+  // log = function () {
+  //   console.log('Animation Complete!');
+  // }
+
+  // animateAlongPath(ghostPath, objectGhost, 0, 2000, log);
+
   //-----------------------------------------------------------------------------------------------
 });

@@ -52,7 +52,46 @@
     </div>
   </section>
 
-  <!-- CONTINUE HERE. Add another section, take alook at the samples from the download and test your own. -->
+  <section>
+    <div>
+      <object id="objectAAP" data="images/03_animateAlongPath.svg" type="image/svg+xml"></object>
+    </div>
+    <div>
+      <h5>03_animateAlongPath.svg</h5>
+      <p>-&ensp;In this case, <code>&lt;path&gt;</code> and <code>&lt;circle&gt;</code> are in the same <code>&lt;object&gt;</code>.</p>
+      <p>-&ensp;If it's an <code>&lt;img&gt;</code>, <a href="http://snapsvg.io/docs/#Paper.image">this</a> should be able to cater for it.</p>
+      <p>-&ensp;If it's a more complicated svg; say a rocket + jet flame, then it would probably be best practice to animate it all in snap.svg.</p>
+      <p>-&ensp;What if its a "svg-sprite-animation" or a "svg-@keyframes-animation"?</p>
+      <p>-&ensp;<a href="https://davidwalsh.name/svg-animations-snap">Reference</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <object id="objectAAPClick" data="images/04_animateAlongPathClick.svg" type="image/svg+xml"></object>
+    </div>
+    <div>
+      <h5>04_animateAlongPathClick.svg</h5>
+      <p>-&ensp;Same as above but will activate on click.</p>
+      <p>-&ensp;Interesting issue, click event listener didn't bind to <code>&lt;object&gt;</code>.</p>
+      <p>-&ensp;In the end I binded the click event to <code>&lt;contentDocument&gt;</code>.</p>
+      <p>-&ensp;Kept record in "ERROR_LOG". CMD+F => Similar/Related to next problem?.</p>
+    </div>
+  </section>
+
+  <!-- <section>
+    <div class="ghostCanvas">
+      <div class="ghostFloat">
+        <object id="objectGhost" data="images/ghost_frontSprite.svg" type="image/svg+xml"></object>
+      </div>
+      <object id="objectGhostPath" data="images/ghost_Path.svg" type="image/svg+xml"></object>
+    </div>
+    <div>
+      <h5>02_shapesEqualAnchors.svg</h5>
+      <p>-&ensp;Text goes here (^-^)b</p>
+    </div>
+  </section> -->
+
 </div>
 
 
