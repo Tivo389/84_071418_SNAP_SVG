@@ -504,7 +504,10 @@ ul {
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%); } }
 
-object[data="images/ghost_frontSprite.svg"] {
+section > div.ghostCanvas:first-child object {
+  width: 200%; }
+
+object[data="images/05_ghostSprite.svg"] {
   -webkit-animation: 0.35s infinite ghostSprite steps(2);
   animation: 0.35s infinite ghostSprite steps(2);
   left: 0;
@@ -512,19 +515,47 @@ object[data="images/ghost_frontSprite.svg"] {
   top: 0;
   width: 200%; }
 
-object[data="images/ghost_Path.svg"] {
+object[data="images/05a_ghostPath.svg"], object[data="images/05_ghostPath.svg"] {
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  z-index: -10; }
 
 .ghostCanvas {
   position: relative; }
 
 .ghostFloat {
-  width: 25%;
-  height: 25%;
+  width: 50%;
+  height: 50%;
   overflow: hidden;
   -webkit-animation: 1.5s ease-in-out infinite ghostFloat;
   animation: 1.5s ease-in-out infinite ghostFloat; }
+
+@-webkit-keyframes ghostSprite2 {
+  100% {
+    -webkit-transform: translate(0, 93px);
+    transform: translate(0, 93px); } }
+
+@keyframes ghostSprite2 {
+  100% {
+    -webkit-transform: translate(0, 93px);
+    transform: translate(0, 93px); } }
+
+#svgG2:hover #path {
+  opacity: 0.35;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s; }
+
+#ghosts {
+  -webkit-animation: 0.35s infinite ghostSprite2 steps(2);
+  animation: 0.35s infinite ghostSprite2 steps(2);
+  left: 0;
+  position: absolute;
+  top: 0; }
+
+#ghostCanvas2 {
+  position: relative;
+  width: 280px;
+  height: 280px; }
