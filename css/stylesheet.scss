@@ -32,6 +32,10 @@ h3 {
   width: 100%;
 }
 
+h3 > p {
+
+}
+
 h5 {
   color: $colorGray;
   font-size: 1.6rem;
@@ -53,6 +57,9 @@ section {
   padding: 3rem;
   &:last-child {
     border-bottom: 1px solid $colorLightGray;
+  }
+  &.flexLeft {
+    justify-content: initial;
   }
   > div:first-child {
     display: flex;

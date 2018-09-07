@@ -420,6 +420,10 @@ section {
   padding: 3rem; }
   section:last-child {
     border-bottom: 1px solid #cccccc; }
+  section.flexLeft {
+    -webkit-box-pack: initial;
+    -ms-flex-pack: initial;
+    justify-content: initial; }
   section > div:first-child {
     display: -webkit-box;
     display: -ms-flexbox;
