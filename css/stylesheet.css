@@ -555,7 +555,27 @@ object[data="images/05a_ghostPath.svg"], object[data="images/05_ghostPath.svg"] 
   position: absolute;
   top: 0; }
 
-#ghostCanvas2 {
+#ghostCanvas2, #ghostCanvas3 {
   position: relative;
   width: 280px;
   height: 280px; }
+
+@-webkit-keyframes ghostSprite3 {
+  100% {
+    -webkit-transform: translate(-478px, 2px);
+    transform: translate(-478px, 2px); } }
+
+@keyframes ghostSprite3 {
+  100% {
+    -webkit-transform: translate(-478px, 2px);
+    transform: translate(-478px, 2px); } }
+
+#svgG3:hover #canvas3, #svgG3:hover #path3 {
+  opacity: 0; }
+
+#ghosts3 {
+  -webkit-animation: 0.35s infinite ghostSprite3 steps(2);
+  animation: 0.35s infinite ghostSprite3 steps(2);
+  left: 0;
+  position: absolute;
+  top: 0; }

@@ -190,4 +190,23 @@ document.addEventListener('DOMContentLoaded', () => {
     animateAlongPath(path, ghosts, 0, 8000);
    }, false);
   //-----------------------------------------------------------------------------------------------
+  // CODE FOR SECTION '07_ghostSprite.svg'
+  const objectG3 = document.querySelector("#objectGhost3");
+  objectG3.addEventListener("load", function() {
+    const svg = objectG3.contentDocument.querySelector("#svgG3");
+    const snap = Snap(svg);
+    const ghosts = snap.select('#maskedGhost');
+    const path = snap.select('#path3');
+    const animateAlongPath = function(path, element, start, duration) {
+      const length = Snap.path.getTotalLength(path);
+      Snap.animate(start, length, function(value) {
+        const nextPoint = Snap.path.getPointAtLength(path, value);
+        element.attr({ transform:`translate(${nextPoint.x} ${nextPoint.y})` });
+      }, duration, mina.linear, function() {
+        animateAlongPath(path, ghosts, 0, 8000);
+      });
+    };
+    animateAlongPath(path, ghosts, 0, 8000);
+   }, false);
+  //-----------------------------------------------------------------------------------------------
 });

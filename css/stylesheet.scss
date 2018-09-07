@@ -146,7 +146,7 @@ object[data="images/05a_ghostPath.svg"], object[data="images/05_ghostPath.svg"] 
 
 
 
-// GHOST  -----------------------------------------------------------------------------------------
+// GHOST2 -----------------------------------------------------------------------------------------
 @keyframes ghostSprite2 {
   100% { transform: translate(0, 93px); }
 }
@@ -163,8 +163,26 @@ object[data="images/05a_ghostPath.svg"], object[data="images/05_ghostPath.svg"] 
   top: 0;
 }
 
-#ghostCanvas2 {
+#ghostCanvas2, #ghostCanvas3 {
   position: relative;
   width: 280px;
   height: 280px;
+}
+
+
+
+// GHOST3 -----------------------------------------------------------------------------------------
+@keyframes ghostSprite3 {
+  100% { transform: translate(-478px, 2px); }
+}
+
+#svgG3:hover #canvas3, #svgG3:hover #path3 {
+  opacity: 0;
+}
+
+#ghosts3 {
+  animation: 0.35s infinite ghostSprite3 steps(2);
+  left: 0;
+  position: absolute;
+  top: 0;
 }
